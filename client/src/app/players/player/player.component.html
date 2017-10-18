@@ -1,0 +1,7 @@
+<app-player-input 
+  [name]="name" 
+  *ngIf="!_playerFound"
+  (newUser)="newUser($event)"></app-player-input>
+<app-player-display 
+  *ngIf="_playerFound"
+  [name]="_displayName"></app-player-display>

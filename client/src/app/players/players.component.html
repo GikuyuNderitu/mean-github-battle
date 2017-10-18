@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="player-container">
+    <app-player name="Player 1" (readied)="playerReady()"></app-player>
+    <app-player name="Player 2" (readied)="playerReady()"></app-player>
+  </div>
+  <button *ngIf="ready" (click)="battle()">BATTLE!</button>
+</div>

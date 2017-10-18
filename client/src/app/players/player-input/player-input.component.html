@@ -1,0 +1,25 @@
+<fieldset>
+  <legend>{{name}}</legend>
+  <h3>{{name}}</h3>
+  <form method="post" #gitForm="ngForm" (submit)="submitForm()">
+    <div class="input-container">
+      <div class="input">
+        <label for="">Name:</label>
+        <input 
+          type="text"
+          name="username"
+          [(ngModel)]="user.username"
+          #username="ngModel"
+          required>
+      </div>
+      <div *ngIf="(!username.valid && (username.dirty || username.touched)) || gitError" class="input-errors">
+        <div class="form-error" *ngIf="!gitForm.form.valid">
+          <span class="error" *ngIf="username.errors.required">Username is required.</span>
+        </div>
+        <span class="error" *ngIf="gitError">I'm sorry, this user does not exist.</span>
+      </div>
+    </div>
+
+    <button [disabled]="!gitForm.form.valid">Get User</button>
+  </form>
+</fieldset>

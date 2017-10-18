@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="players">
+    <div class="scores">
+      <app-results-display *ngFor="let user of battlers; index as i" [user]="user" [rank]="i+1"></app-results-display>
+    </div>
+    <app-player-display [name]="winner"></app-player-display>
+  </div>
+  <button (click)="reset()">Reset</button>
+</div>
